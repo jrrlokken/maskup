@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "keystone-next",
-    "seed-data": "keystone-next --seed-data"
+    "start": "keystone-next"
   },
   "eslintConfig": {
     "extends": "wesbos/typescript.js",
