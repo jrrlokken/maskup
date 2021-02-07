@@ -18,6 +18,7 @@ import {sendPasswordResetEmail} from './lib/mail';
 
 const databaseURL = process.env.DATABASE_URL;
 const sessionConfig = {
+  secure: process.env.NODE_ENV === 'production',
   maxAge: 60 * 60 * 24 * 30,
   secret: process.env.COOKIE_SECRET,
 };
