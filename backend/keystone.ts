@@ -14,7 +14,7 @@ import { User } from './schemas/User';
 import {permissionsList } from './schemas/fields';
 import {sendPasswordResetEmail} from './lib/mail';
 
-import { insertSeedData } from './seed-data';
+// import { insertSeedData } from './seed-data';
 
 const databaseURL = process.env.DATABASE_URL;
 const sessionConfig = {
@@ -58,9 +58,9 @@ export default withAuth(
       url: databaseURL,
       async onConnect(keystone) {
         console.log('Connected to the database.');
-        if (process.argv.includes('--seed-data')) {
-          await insertSeedData(keystone);
-        }
+        // if (process.argv.includes('--seed-data')) {
+        //   await insertSeedData(keystone);
+        // }
       },
     },
     lists: createSchema({
