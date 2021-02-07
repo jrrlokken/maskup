@@ -17,4 +17,6 @@ export const extendGraphqlSchema = graphQLSchemaExtension({
       checkout,
     },
   },
+  introspection: true,
+  playground: true,
 });
