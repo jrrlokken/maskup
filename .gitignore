@@ -1,0 +1,13 @@
+node_modules/
+*.log
+haters/
+.next/
+.build/
+layout.md
+variables.env
+.env*
+.yarn/
+dist/
+notes/
+.keystone/
+seed-data/
