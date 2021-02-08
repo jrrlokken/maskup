@@ -1,5 +1,5 @@
-#Keystone-Next eCommerce backend
-##This is an eCommerce backend implementation using KeystoneJS.
+# Keystone-Next eCommerce backend
+## This is an eCommerce backend implementation using KeystoneJS.
 
 ### Running the code locally
 
