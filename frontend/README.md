@@ -1,5 +1,6 @@
-# Mask Up!
+# [Mask Up!](https://maskup.joshualokken.tech)
 ## A React and Next.js face mask marketplace 😷
+https://maskup.joshualokken.tech
 
 ### Running the code locally
 **NOTE** You'll need a stripe public key setup in your .env file or environment to run this example. See the sample.env for the required field.
