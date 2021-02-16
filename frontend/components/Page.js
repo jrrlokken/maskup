@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 
@@ -38,7 +37,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: var(---black);
+    color: var(--black);
   }
   button {
     font-family: 'Maven Pro';

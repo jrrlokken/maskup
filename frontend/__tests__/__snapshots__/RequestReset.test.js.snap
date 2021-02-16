@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RequestReset/> renders and matches snapshot 1`] = `
+<form
+  className="Form-c7byzo-0 csfyM"
+  data-test="form"
+  method="post"
+  onSubmit={[Function]}
+>
+  <h2>
+    Request password reset
+  </h2>
+  <DisplayError
+    error={Object {}}
+  />
+  <fieldset>
+    <label
+      htmlFor="email"
+    >
+      Email
+      <input
+        name="email"
+        onChange={[Function]}
+        placeholder="email"
+        type="email"
+        value=""
+      />
+    </label>
+    <StyledButton
+      type="submit"
+    >
+      <button
+        className="StyledButton-sc-1vgaxf4-0 kkhzEF"
+        type="submit"
+      >
+        Request Reset
+      </button>
+    </StyledButton>
+  </fieldset>
+</form>
+`;
