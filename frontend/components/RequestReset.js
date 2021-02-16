@@ -32,6 +32,7 @@ const RequestReset = () => {
   return (
     <Form
       method='post'
+      data-test='form'
       onSubmit={handleSubmit}
     >
       <h2>Request password reset</h2>
@@ -58,3 +59,4 @@ const RequestReset = () => {
 }
 
 export default RequestReset;
+export { REQUEST_RESET_MUTATION };

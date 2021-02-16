@@ -22,3 +22,5 @@ export default function AddToCart({ id }) {
     </button>
   );
 }
+
+export { ADD_TO_CART_MUTATION };
