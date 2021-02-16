@@ -1,18 +1,19 @@
-import Page from '../components/Page';
+import Products from '../components/Products';
 import { configure, shallow } from 'enzyme';
 import Adapter from '@hteker/enzyme-adapter-react-17';
 import { MockedProvider } from '@apollo/client/testing';
+import { fakeProduct } from '../lib/testUtils';
 
 configure({ adapter: new Adapter() });
 
-describe('<Page/>', () => {
-  it('renders and matches the snapshot', () => {
+describe('<Products/>', () => {
+  it('renders and matches snapshot', () => {
     const wrapper = shallow(
       <MockedProvider>
-        <Page />
+        <Products />
       </MockedProvider>
     );
-    console.log(wrapper.debug());
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();  
   });
-});
+
+})
