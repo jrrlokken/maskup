@@ -51,7 +51,7 @@ const SingleOrderPage = ({ query }) => {
       </p>
       <p>
         <span>Total:</span>
-        <span>{order.total}</span>
+        <span>{formatMoney(order.total)}</span>
       </p>
       <p>
         <span>Item Count:</span>
