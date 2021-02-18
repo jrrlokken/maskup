@@ -50,10 +50,8 @@ const UpdateProduct = ({ id }) => {
   const { inputs, handleChange } = useForm(
     data?.Product || { name: '', price: '', description: '' }
   );
-  // console.log(inputs);
   
   if (loading) return <p>Loading...</p>;
-  // if (!data || !data.Item) return <p>No item found for ID {id}</p>;
 
   return (
     <Form
@@ -67,10 +65,9 @@ const UpdateProduct = ({ id }) => {
             price: inputs.price,
           },
         }).catch(console.error);
-        console.log(res);
       }}
     >
-      {/* <p>{data.Item.name}</p> */}
+
       <DisplayError error={error || updateError} />
       <fieldset disabled={updateLoading} aria-busy={updateLoading}>
         <label htmlFor='name'>
