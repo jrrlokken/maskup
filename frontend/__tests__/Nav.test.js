@@ -1,5 +1,6 @@
 import { configure, mount } from 'enzyme';
 import Adapter from '@hteker/enzyme-adapter-react-17';
+import toJSON from 'enzyme-to-json';
 import { MockedProvider } from '@apollo/client/testing';
 import { act } from 'react-dom/test-utils';
 import wait from 'waait';
@@ -14,14 +15,20 @@ configure({ adapter: new Adapter() });
 const notSignedInMocks = [
   {
     request: { query: CURRENT_USER_QUERY },
-    result: { data: { me: null } }
+    result: { data: { user: null } }
   },
 ];
 
 const signedInMocks = [
   {
     request: { query: CURRENT_USER_QUERY },
-    result: { data: { user: fakeUser() } }
+    result: { 
+      data: { 
+        authenticatedItem: {
+          user: fakeUser() 
+        } 
+      }
+    }
   },
 ];
 
@@ -35,8 +42,10 @@ describe('<Nav/>', () => {
         </CartStateProvider>
       </MockedProvider>
     );
-    expect(wrapper.debug()).toMatchSnapshot();
-    expect(wrapper.text()).toContain('Sign In')
+    const navLinks = wrapper.find('ul');
+    expect(toJSON(navLinks)).toMatchSnapshot();
+    expect(navLinks.find('a').at(1).text()).toBe('Sign In');
+    expect(navLinks.find('a').at(2).text()).toBe('Sign Up');
   });
   it('renders proper links when signed in', async () => {
     const wrapper = mount(
@@ -49,8 +58,11 @@ describe('<Nav/>', () => {
     await act(async () => {
       await wait();
       wrapper.update();
-      console.log(wrapper.debug());
-      
+      const navLinks = wrapper.find('ul')
+      expect(toJSON(navLinks)).toMatchSnapshot();
+      expect(navLinks.find('a').at(0).text()).toBe('Products');
+      expect(navLinks.find('a').at(1).text()).toBe('Sell');
+      expect(navLinks.find('a').at(2).text()).toBe('Orders');
     });
   });
 });
