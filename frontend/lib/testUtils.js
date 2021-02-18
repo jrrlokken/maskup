@@ -31,7 +31,11 @@ const fakeUser = overrides => ({
 const fakeOrderItem = () => ({
   // __typename: 'OrderItem',
   id: casual.uuid,
-  image: `${casual.word}.jpg`,
+  photo: {
+    image: {
+      publicUrlTransformed: `${casual.word}.jpg`
+    }
+  },
   name: casual.words(),
   price: 4234,
   quantity: 1,
@@ -49,13 +53,14 @@ const fakeOrder = () => ({
 });
 
 const fakeCartItem = overrides => ({
-  __typename: 'CartItem',
+  // __typename: 'CartItem',
   id: 'omg123',
   quantity: 3,
-  item: fakeItem(),
+  item: fakeProduct,
   user: fakeUser(),
   ...overrides,
 });
+
 
 // Fake LocalStorage
 class LocalStorageMock {
