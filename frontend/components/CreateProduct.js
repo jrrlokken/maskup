@@ -114,3 +114,4 @@ const CreateProduct = () => {
 }
 
 export default CreateProduct;
+export { CREATE_PRODUCT_MUTATION };

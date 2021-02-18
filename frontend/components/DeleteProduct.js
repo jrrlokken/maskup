@@ -44,3 +44,4 @@ const DeleteProduct = ({ id, children }) => {
 }
 
 export default DeleteProduct;
+export { DELETE_PRODUCT_MUTATION };
