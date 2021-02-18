@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import NProgress from 'nprogress';
 
 import { useUser } from './User';
 import NavStyles from './styles/NavStyles';
