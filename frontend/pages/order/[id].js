@@ -50,8 +50,8 @@ const SingleOrderPage = ({ query }) => {
         <span>{order.id}</span>
       </p>
       <p>
-        <span>Charge:</span>
-        <span>{order.charge}</span>
+        <span>Total:</span>
+        <span>{order.total}</span>
       </p>
       <p>
         <span>Item Count:</span>
