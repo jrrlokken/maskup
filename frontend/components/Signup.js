@@ -1,6 +1,7 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
+import Signin, { SIGNIN_MUTATION } from './Signin';
 import useForm from '../lib/useForm';
 import DisplayError from './ErrorMessage';
 import Form from './styles/Form';
@@ -32,8 +33,9 @@ const Signup = () => {
   });
   async function handleSubmit(event) {
     event.preventDefault();
-    const res = await signup().catch(console.error);
+    await signup().catch(console.error);
     resetForm();
+    await signin();
   }
   return (
     <Form method='post' onSubmit={handleSubmit}>

@@ -38,7 +38,7 @@ const Signin = () => {
   });
   async function handleSubmit(event) {
     event.preventDefault();
-    const res = await signin();
+    await signin();
     resetForm();
     router.push('/products');
   }
@@ -83,3 +83,4 @@ const Signin = () => {
 }
 
 export default Signin;
+export { SIGNIN_MUTATION };
