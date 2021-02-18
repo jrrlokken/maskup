@@ -1,7 +1,9 @@
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from '@hteker/enzyme-adapter-react-17';
 import { MockedProvider } from '@apollo/client/testing';
+import { act } from 'react-test-renderer';
 import wait from 'waait';
+
 import AddToCart, { ADD_TO_CART_MUTATION } from '../components/AddToCart';
 import { fakeProduct, fakeUser } from '../lib/testUtils';
 
@@ -39,8 +41,10 @@ describe('<AddToCart/>', () => {
     );
     const button = wrapper.find('button');
     expect(button.text()).toBe('Add To Cart 🛒');
-    button.simulate('click');
-    wrapper.update();
-    expect(button.text()).toBe('Adding To Cart 🛒');
+    await act(async () => {
+      button.simulate('click');
+      wrapper.update();
+      expect(button.text()).toBe('Adding To Cart 🛒');
+    });
   });
 });

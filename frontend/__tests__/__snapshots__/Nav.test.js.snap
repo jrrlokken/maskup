@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav/> renders and matches snapshot 1`] = `
+"<MockedProvider mocks={{...}} addTypename={false}>
+  <ApolloProvider client={{...}}>
+    <CartStateProvider>
+      <Nav>
+        <NavStyles>
+          <ul className=\\"NavStyles-p91201-0 fQlFYq\\">
+            <Link href=\\"/products\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/products\\">
+                Products
+              </a>
+            </Link>
+            <Link href=\\"/signin\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/signin\\">
+                Sign In
+              </a>
+            </Link>
+            <Link href=\\"/signup\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/signup\\">
+                Sign Up
+              </a>
+            </Link>
+          </ul>
+        </NavStyles>
+      </Nav>
+    </CartStateProvider>
+  </ApolloProvider>
+</MockedProvider>"
+`;

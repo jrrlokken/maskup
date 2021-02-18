@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination/> displays a loading message 1`] = `
+<Pagination
+  page={1}
+>
+  <p>
+    Loading...
+  </p>
+</Pagination>
+`;
+
+exports[`<Pagination/> renders pagination for 18 items 1`] = `
+"<MockedProvider mocks={{...}} addTypename={true}>
+  <ApolloProvider client={{...}}>
+    <Pagination page={1}>
+      <PaginationStyles>
+        <div className=\\"PaginationStyles-sc-15b0bt5-0 itHVNY\\">
+          <Head>
+            <_default reduceComponentsToState={[Function: reduceComponents]} headManager={{...}} inAmpMode={false} />
+          </Head>
+          <Link href=\\"/products/0\\">
+            <a aria-disabled={true} onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/products/0\\">
+              ↩ Prev
+            </a>
+          </Link>
+          <p>
+            Page 
+            1
+             of 
+            5
+          </p>
+          <p>
+            18
+             Items Total
+          </p>
+          <Link href=\\"/products/2\\">
+            <a aria-disabled={false} onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/products/2\\">
+              Next ↪
+            </a>
+          </Link>
+        </div>
+      </PaginationStyles>
+    </Pagination>
+  </ApolloProvider>
+</MockedProvider>"
+`;

@@ -16,5 +16,5 @@ describe('<DisplayError/>', () => {
     expect(wrapper.find('strong').text()).toBe('Oops!');
     const ptext = wrapper.find('p').text();
     expect(ptext).toBe('Oops!Error!');
-  })
-})
+  });
+});

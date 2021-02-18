@@ -5,7 +5,7 @@ import Adapter from '@hteker/enzyme-adapter-react-17';
 configure({ adapter: new Adapter() });
 
 describe('<Header/>', () => {
-  it('matches the snapshot and urenders the logo', () => {
+  it('matches the snapshot and renders the logo', () => {
     const wrapper = shallow(
       <Header />
     );
