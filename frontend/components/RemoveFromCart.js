@@ -43,3 +43,4 @@ const RemoveFromCart = ({ id }) => {
 }
 
 export default RemoveFromCart;
+export { REMOVE_FROM_CART_MUTATION };

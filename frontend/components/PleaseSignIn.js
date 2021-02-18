@@ -2,8 +2,8 @@ import { useUser } from './User';
 import Signin from './Signin';
 
 const PleaseSignIn = ({ children }) => {
-  const me = useUser();
-  if (!me) return <Signin />;
+  const user = useUser();
+  if (!user) return <Signin />;
   return children;
 }
 
