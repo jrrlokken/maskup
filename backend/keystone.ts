@@ -14,7 +14,7 @@ import { User } from './schemas/User';
 import {permissionsList } from './schemas/fields';
 import {sendPasswordResetEmail} from './lib/mail';
 
-import { insertSeedData } from './seed-data';
+// import { insertSeedData } from './seed-data';
 
 const databaseURL = process.env.DATABASE_URL;
 const sessionConfig = {
