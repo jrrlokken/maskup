@@ -53,7 +53,6 @@ const CreateProduct = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     const res = await createProduct();
-    console.log(res);
     clearForm();
     router.push(`/product/${res.data.createProduct.id}`);
   }
