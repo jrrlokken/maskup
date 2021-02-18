@@ -59,7 +59,7 @@ const UpdateProduct = ({ id }) => {
     <Form
       onSubmit={async event => {
         event.preventDefault();
-        const res = await udpateProduct({
+        const res = await updateProduct({
           variables: {
             id,
             name: inputs.name,
@@ -115,3 +115,4 @@ const UpdateProduct = ({ id }) => {
 }
 
 export default UpdateProduct;
+export { UPDATE_PRODUCT_MUTATION };
