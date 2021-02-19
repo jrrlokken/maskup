@@ -67,13 +67,8 @@ const SingleProduct = ({ id }) => {
       <PriceTag>{formatMoney(Product.price)}</PriceTag>
       <p>{Product.description}</p>
       <div className="buttonList">
-        <Link
-          href={{
-            pathname: 'update',
-            query: { id: Product.id },
-          }}
-        >
-          Edit ✏️
+        <Link href={{ pathname: '/update', query: { id: Product.id } }}>
+          Edit 📝
         </Link>
         <AddToCart id={Product.id} />
         <DeleteProduct id={Product.id}>Delete</DeleteProduct>
