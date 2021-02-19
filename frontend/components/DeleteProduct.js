@@ -37,8 +37,9 @@ const DeleteProduct = ({ id, children }) => {
       type='button'
       disabled={loading}
       onClick={handleClick}
-    >
+    > 
       {children}
+       🗑️
     </button>
   );
 }
