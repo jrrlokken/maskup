@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Page/> renders and matches the snapshot 1`] = `
-"<ApolloProvider client={{...}}>
-  <Page />
-</ApolloProvider>"
-`;
