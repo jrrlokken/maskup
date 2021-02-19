@@ -67,7 +67,7 @@ const UpdateProduct = ({ id }) => {
             price: inputs.price,
           },
         }).catch(console.error);
-        router.push('/products');
+        router.back();
       }}
     >
 
