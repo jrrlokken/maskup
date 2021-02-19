@@ -54,19 +54,6 @@ const SingleProduct = ({ id }) => {
   const { Product } = data;
 
   return (
-    // <ProductStyles>
-    //   <Head>
-    //     <title>Mask Up | {Product.name}</title>
-    //   </Head>
-    //   <img
-    //     src={Product.photo.image.publicUrlTransformed}
-    //     alt={Product.photo.altText}
-    //   />
-    //   <div className="details">
-    //     <h2>{Product.name}</h2>
-    //     <p>{Product.description}</p>
-    //   </div>
-    // </ProductStyles>
     <ItemStyles>
       <img
         src={Product.photo.image.publicUrlTransformed}
