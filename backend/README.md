@@ -4,7 +4,7 @@ https://api.maskup.joshualokken.tech
 
 ### Running the code locally
 
-**NOTE** you'll Cloudinary, Stripe, SMTP credentials and a MongoDB URI set up in your `.env` file or environment variables to run this example. See the `sample.env` file for required fields.
+**NOTE** you'll need Cloudinary, Stripe, SMTP credentials and a MongoDB URI set up in your `.env` file or environment variables to run this example. See the `sample.env` file for required fields.
 
 To run the project locally:
 
