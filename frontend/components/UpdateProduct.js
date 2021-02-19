@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
+import { useRouter } from 'next/router';
 
 import Form from './styles/Form';
 import DisplayError from './ErrorMessage';
@@ -40,6 +41,7 @@ const UPDATE_PRODUCT_MUTATION = gql`
 `;
 
 const UpdateProduct = ({ id }) => {
+  const router = useRouter();
   const { data, error, loading } = useQuery(SINGLE_PRODUCT_QUERY, {
     variables: { id },
   });
@@ -65,6 +67,7 @@ const UpdateProduct = ({ id }) => {
             price: inputs.price,
           },
         }).catch(console.error);
+        router.push('/products');
       }}
     >
 
