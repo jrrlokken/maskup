@@ -25,7 +25,7 @@ const Product = ({ product }) => {
         <Link
           href={{ pathname: '/update', query: { id: product.id } }}
         >
-          Edit
+          Edit 📝
         </Link>
         <AddToCart id={product.id} />
         <DeleteProduct id={product.id}>Delete</DeleteProduct>
