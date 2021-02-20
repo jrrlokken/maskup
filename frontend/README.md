@@ -3,7 +3,7 @@
 https://maskup.joshualokken.tech
 
 ### Running the code locally
-**NOTE** You'll need a stripe public key setup in your .env file or environment to run this example. See the sample.env for the required field.
+**NOTE** You'll need a stripe public key setup in your .env.local file or environment to run this example. See the sample.env for the required field.
 
 To run the project locally:
 - Clone this repo
