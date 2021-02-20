@@ -11,8 +11,8 @@ The payment API is Stripe, and is in test mode.  There are lots of test cards fo
 - GraphQL Playground: https://api.maskup.joshualokken.tech/api/graphql
   - [Backend README](https://github.com/jrrlokken/maskup/blob/master/backend/README.md)
 
-The backend is a Keystone.js headless CMS and GraphQL API, and data is hosted on MongoDB Atlas.  
-Images are hosted on Cloudinary. Email service is Twilio Sendgrid.  
+The backend is a [Keystone.js](https://www.keystonejs.com/) headless CMS and GraphQL API, and data is hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).  
+Images are hosted on [Cloudinary](https://cloudinary.com). Email service is [Twilio Sendgrid](https://cloudinary.com).  
 The marketplace is a Next/React app. Both are hosted on a Digital Ocean droplet.
 
 Tests are in the \__tests\__ directories, and are written with Jest and Enzyme.
