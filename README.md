@@ -1,4 +1,4 @@
-# Mask Up!
+# Mask Up! 😷
 ## A Keystone.js and React face mask marketplace
 
 Buy and sell face masks to protect you and others during the pandemic :)  
