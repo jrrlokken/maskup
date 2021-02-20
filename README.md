@@ -7,7 +7,8 @@ The payment API is Stripe, and is in test mode.  There are lots of test cards fo
 
 - Store: https://maskup.joshualokken.tech
   - [Frontend README](https://github.com/jrrlokken/maskup/blob/master/frontend/README.md)
-- Backend: https://api.maskup.joshualokken.tech
+- API: https://api.maskup.joshualokken.tech
+- GraphQL Playground: https://api.maskup.joshualokken.tech/api/graphql
   - [Backend README](https://github.com/jrrlokken/maskup/blob/master/backend/README.md)
 
 The backend is Keystone.js with a GraphQL API, and data is hosted on MongoDB Atlas.
