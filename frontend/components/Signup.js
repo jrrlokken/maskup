@@ -1,7 +1,9 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import { useRouter } from 'next/router';
 
-import Signin, { SIGNIN_MUTATION } from './Signin';
+import { SIGNIN_MUTATION } from './Signin';
+import { CURRENT_USER_QUERY } from './User';
 import useForm from '../lib/useForm';
 import DisplayError from './ErrorMessage';
 import Form from './styles/Form';
@@ -22,6 +24,7 @@ const SIGNUP_MUTATION = gql`
 `;
 
 const Signup = () => {
+  const router = useRouter();
   const { inputs, handleChange, resetForm } = useForm({
     name: '',
     email: '',
@@ -29,13 +32,20 @@ const Signup = () => {
   });
   const [signup, { data, error, loading }]= useMutation(SIGNUP_MUTATION, {
     variables: inputs,
-    // refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+  const [signin, { data: signInData, loading: signInLoading }] = useMutation(
+    SIGNIN_MUTATION,
+    {
+      variables: inputs,
+      refetchQueries: [{ query: CURRENT_USER_QUERY }],
+    }
+  );
   async function handleSubmit(event) {
     event.preventDefault();
     await signup().catch(console.error);
-    resetForm();
     await signin();
+    resetForm();
+    router.push('/');
   }
   return (
     <Form method='post' onSubmit={handleSubmit}>
