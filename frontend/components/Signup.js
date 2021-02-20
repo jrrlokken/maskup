@@ -52,9 +52,6 @@ const Signup = () => {
       <h2>Sign up for an account</h2>
       <DisplayError error={error} />
       <fieldset>
-        {data?.createUser && (
-          <p>Signed up with {data.createUser.email} - Please sign in</p>
-        )}
         <label htmlFor='name'>
           Name
           <input
