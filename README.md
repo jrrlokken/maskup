@@ -1,5 +1,5 @@
-# maskup
-## Mask Up! A Keystone.js and React face mask marketplace
+# Mask Up!
+## A Keystone.js and React face mask marketplace
 
 Buy and sell face masks to protect you during the pandemic :)
 Sign up for an account, post your own products, or 'buy' one of the available masks.
