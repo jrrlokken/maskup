@@ -6,6 +6,7 @@ Sign up for an account, post your own products, or 'buy' one of the available ma
 The payment API is Stripe, and is in test mode.  There are lots of test cards for you to use [here](https://stripe.com/docs/testing).
 
 Store: https://maskup.joshualokken.tech
+
 Backend: https://api.maskup.joshualokken.tech
 
 The backend is Keystone.js with a GraphQL API, and data is hosted on MongoDB Atlas.
