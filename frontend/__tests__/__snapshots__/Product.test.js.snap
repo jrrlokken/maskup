@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product/> renders and matches snapshot 1`] = `
+<PriceTag>
+  <span
+    className="PriceTag-sc-17vnhm5-0 fLBUwy"
+  >
+    $14.99
+  </span>
+</PriceTag>
+`;
+
+exports[`<Product/> renders and matches snapshot 2`] = `
+<Title>
+  <h3
+    className="Title-sc-61hg5m-0 kkIpao"
+  >
+    <Link
+      href="/product/abc123"
+    >
+      <a
+        href="/product/abc123"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Test Product
+      </a>
+    </Link>
+  </h3>
+</Title>
+`;
+
+exports[`<Product/> renders and matches snapshot 3`] = `
+<div
+  className="buttonList"
+>
+  <Link
+    href={
+      Object {
+        "pathname": "update",
+        "query": Object {
+          "id": "abc123",
+        },
+      }
+    }
+  >
+    <a
+      href="/update?id=abc123"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Edit ✏️
+    </a>
+  </Link>
+  <AddToCart
+    id="abc123"
+  >
+    <button
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Add
+       To Cart 🛒
+    </button>
+  </AddToCart>
+  <DeleteProduct
+    id="abc123"
+  >
+    <button
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+  </DeleteProduct>
+</div>
+`;
