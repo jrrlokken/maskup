@@ -6,15 +6,16 @@ casual.seed(777);
 const fakeProduct = ({
   // __typename: 'Item',
   id: 'abc123',
+  name: 'Test Product',
+  description: 'This is a test product',
   price: 1499,
-  user: null,
   photo: {
+    altText: 'dog',
     image: {
       publicUrlTransformed: 'dog.jpg',
     },
   },
-  name: 'Test Product',
-  description: 'This is a test product',
+  user: null,
 });
 
 const fakeUser = overrides => ({
