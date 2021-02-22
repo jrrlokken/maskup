@@ -4,9 +4,9 @@ import toJSON from 'enzyme-to-json';
 import { act } from 'react-dom/test-utils';
 import wait from 'waait';
 import { MockedProvider } from '@apollo/client/testing';
-import { fakeProduct } from '../lib/testUtils';
 
 import Reset, { RESET_MUTATION } from '../components/Reset';
+import { fakeProduct } from '../lib/testUtils';
 
 configure({ adapter: new Adapter() });
 

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleProduct/> renders and matches snapshot 1`] = `
+<SingleProduct
+  id="abc123"
+>
+  <p>
+    Loading...
+  </p>
+</SingleProduct>
+`;

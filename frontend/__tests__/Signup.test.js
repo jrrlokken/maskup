@@ -8,9 +8,15 @@ import wait from 'waait';
 
 import Signup, { SIGNUP_MUTATION } from '../components/Signup';
 import { CURRENT_USER_QUERY } from '../components/User';
-import { type, fakeUser } from '../lib/testUtils';
+import { fakeUser } from '../lib/testUtils';
 
 configure({ adapter: new Adapter() });
+
+function type(wrapper, name, value) {
+  wrapper.find(`input[name='${name}']`).simulate('change', {
+    target: { name, value },
+  });
+}
 
 const me = fakeUser();
 const mocks = [
