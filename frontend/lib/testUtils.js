@@ -3,6 +3,12 @@ import casual from 'casual';
 // seed it so we get consistent results
 casual.seed(777);
 
+const type = (wrapper, name, value) => {
+  wrapper.find(`input[name='${name}']`).simulate('change', {
+    target: { name, value }
+  });
+};
+
 const fakeProduct = ({
   // __typename: 'Item',
   id: 'abc123',
@@ -87,10 +93,11 @@ class LocalStorageMock {
 }
 
 export {
-  LocalStorageMock,
+  type,
   fakeProduct,
   fakeUser,
   fakeCartItem,
   fakeOrder,
   fakeOrderItem,
+  LocalStorageMock,
 };
