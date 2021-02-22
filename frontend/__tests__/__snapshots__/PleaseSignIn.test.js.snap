@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PleaseSignIn/> renders and matches snapshot 1`] = `
+<form
+  className="Form-c7byzo-0 csfyM"
+  method="post"
+  onSubmit={[Function]}
+>
+  <h2>
+    Sign into your account
+  </h2>
+  <DisplayError
+    error={Object {}}
+  />
+  <fieldset>
+    <label
+      htmlFor="email"
+    >
+      Email
+      <input
+        autoComplete="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="Your Email Address"
+        type="email"
+        value=""
+      />
+    </label>
+    <label
+      htmlFor="password"
+    >
+      Password
+      <input
+        autoComplete="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </label>
+  </fieldset>
+  <StyledButton
+    type="submit"
+  >
+    <button
+      className="StyledButton-sc-1vgaxf4-0 kkhzEF"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </StyledButton>
+</form>
+`;

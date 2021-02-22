@@ -38,6 +38,14 @@ const signedInMocks = [
 ];
 
 describe('<PleaseSignIn/>', () => {
+  it('renders and matches snapshot', () => {
+    const wrapper = mount(
+      <MockedProvider>
+        <PleaseSignIn />
+      </MockedProvider>
+    );
+    expect(toJSON(wrapper.find('form'))).toMatchSnapshot();
+  });
   it('renders the signin dialog when not logged in', () => {
     const wrapper = mount(
       <MockedProvider mocks={notSignedInMocks} addTypename={false}>
@@ -47,18 +55,19 @@ describe('<PleaseSignIn/>', () => {
     expect(wrapper.find('h2').text()).toBe('Sign into your account');
     expect(wrapper.find('Signin').exists()).toBe(true);
   });
-// it('renders children to logged in users', async () => {
-//     const Child = () => <p>I thought I was a child</p>;
-//     const wrapper = mount(
-//       <MockedProvider mocks={signedInMocks} addTypename={false}>
-//         <PleaseSignIn>
-//           <Child />
-//         </PleaseSignIn>
-//       </MockedProvider>
-//     );
-//     await act(async () => {
-//       await wait();
-//       wrapper.update();
-//     });
-//   });
+  it('renders children to logged in users', async () => {
+    const Child = () => <p>I thought I was a child</p>;
+    const wrapper = mount(
+      <MockedProvider mocks={signedInMocks} addTypename={false}>
+        <PleaseSignIn>
+          <Child />
+        </PleaseSignIn>
+      </MockedProvider>
+    );
+    console.log(toJSON(wrapper.find('PleaseSignIn')))
+    // await act(async () => {
+    //   await wait();
+    //   wrapper.update();
+    // });
+  });
 });
