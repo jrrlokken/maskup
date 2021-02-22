@@ -29,10 +29,10 @@ const ProductStyles = styled.div`
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
     Product(where: { id: $id }) {
-      name
-      price
-      description
       id
+      name
+      description
+      price
       photo {
         altText
         image {
@@ -54,19 +54,6 @@ const SingleProduct = ({ id }) => {
   const { Product } = data;
 
   return (
-    // <ProductStyles>
-    //   <Head>
-    //     <title>Mask Up | {Product.name}</title>
-    //   </Head>
-    //   <img
-    //     src={Product.photo.image.publicUrlTransformed}
-    //     alt={Product.photo.altText}
-    //   />
-    //   <div className="details">
-    //     <h2>{Product.name}</h2>
-    //     <p>{Product.description}</p>
-    //   </div>
-    // </ProductStyles>
     <ItemStyles>
       <img
         src={Product.photo.image.publicUrlTransformed}
@@ -96,3 +83,4 @@ const SingleProduct = ({ id }) => {
 }
 
 export default SingleProduct;
+export { SINGLE_ITEM_QUERY };
