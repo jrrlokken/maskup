@@ -1,6 +1,11 @@
 import { configure, mount } from 'enzyme';
 import Adapter from '@hteker/enzyme-adapter-react-17';
 import { MockedProvider } from '@apollo/client/testing';
+import { ApolloConsumer } from '@apollo/client';
+import toJSON from 'enzyme-to-json';
+import { act } from 'react-dom/test-utils';
+import wait from 'waait';
+
 import Cart from '../components/Cart';
 import { CartStateProvider } from '../lib/cartState';
 import { fakeCartItem, fakeUser } from '../lib/testUtils';
@@ -11,21 +16,36 @@ configure({ adapter: new Adapter() });
 const mocks = [
   {
     request: { query: CURRENT_USER_QUERY },
-    result: { data: 
-      { me: fakeUser(), cartItem: fakeCartItem() },
-    }
+    result: { data: { me: {
+      ...fakeUser(),
+      cart: [ fakeCartItem() ]
+    }}}
   }
 ];
 
 describe('<Cart/>', () => {
-  it('renders and matches snapshot', () => {
+  it('renders and matches snapshot', async () => {
+    let apolloClient;
     const wrapper = mount(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <CartStateProvider>
-          <Cart />
-        </CartStateProvider>
+        <ApolloConsumer>
+          {client => {
+            apolloClient = client;
+            return (
+              <CartStateProvider cartOpen={true}>
+                <Cart />
+              </CartStateProvider>
+            );
+          }}
+        </ApolloConsumer>
       </MockedProvider>
     );
-    expect(wrapper.debug()).toMatchSnapshot();
+    const user = await apolloClient.query({ query: CURRENT_USER_QUERY });
+    console.log(user);
+    await act(async () => {
+      await wait();
+      wrapper.update();
+      console.log(wrapper.debug())
+    });
   });
 });
