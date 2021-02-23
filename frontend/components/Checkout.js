@@ -97,4 +97,4 @@ const Checkout = () => {
   );
 }
 
-export { Checkout };
+export { Checkout, CREATE_ORDER_MUTATION };
