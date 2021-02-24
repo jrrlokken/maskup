@@ -1,3 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header/> matches the snapshot and renders the logo 1`] = `ShallowWrapper {}`;
+exports[`<Header/> renders the logo and matches snapshot 1`] = `
+<Header__StyledHeader>
+  <div
+    className="bar"
+  >
+    <Header__Logo>
+      <Link
+        href="/"
+      >
+        <a
+          id="logo"
+        >
+          Mask Up!
+        </a>
+      </Link>
+    </Header__Logo>
+    <Nav />
+  </div>
+  <div
+    className="sub-bar"
+  >
+    <Search />
+  </div>
+  <Cart />
+</Header__StyledHeader>
+`;
+
+exports[`<Header/> renders the logo and matches snapshotu 1`] = `
+<Header__StyledHeader>
+  <div
+    className="bar"
+  >
+    <Header__Logo>
+      <Link
+        href="/"
+      >
+        <a
+          id="logo"
+        >
+          Mask Up!
+        </a>
+      </Link>
+    </Header__Logo>
+    <Nav />
+  </div>
+  <div
+    className="sub-bar"
+  >
+    <Search />
+  </div>
+  <Cart />
+</Header__StyledHeader>
+`;

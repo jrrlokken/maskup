@@ -13,7 +13,10 @@ configure({ adapter: new Adapter() });
 
 const mocks = [
   {
-    request: { query: SINGLE_ITEM_QUERY },
+    request: { 
+      query: SINGLE_ITEM_QUERY,
+      variables: { id: fakeProduct.id }
+    },
     result: {
       data: { Product: fakeProduct }
     }
@@ -28,12 +31,15 @@ describe('<SingleProduct/>', () => {
       </MockedProvider>
     );
     expect(wrapper.find('p').text()).toBe('Loading...');
-    const component = wrapper.find('SingleProduct');
-    console.log(component.debug());
-    expect(toJSON(component)).toMatchSnapshot();
     await act(async () => {
       await wait();
       wrapper.update();
+      console.log(wrapper.debug());
+      expect(wrapper.find('Title').text()).toBe('Test Product');
+      expect(wrapper.find('PriceTag').text()).toBe('$14.99');
+      expect(wrapper.containsMatchingElement(<AddToCart />)).toBe(true);
+      const component = wrapper.find('SingleProduct');
+      expect(toJSON(component)).toMatchSnapshot();
     });
   });
 })

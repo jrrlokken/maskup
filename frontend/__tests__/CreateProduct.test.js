@@ -14,8 +14,13 @@ configure({ adapter: new Adapter() });
 
 
 
-describe.skip('<CreateProduct/>', () => {
-  xit('creates a new product', async () => {
-
+describe('<CreateProduct/>', () => {
+  it('renders and matches snapshot', async () => {
+    const wrapper = mount(
+      <MockedProvider>
+        <CreateProduct />
+      </MockedProvider>
+    );
+    expect(toJSON(wrapper.find('form'))).toMatchSnapshot();
   });
 });
