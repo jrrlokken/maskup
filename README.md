@@ -15,4 +15,4 @@ The backend is a [Keystone.js](https://www.keystonejs.com/) headless CMS and Gra
 Images are hosted on [Cloudinary](https://cloudinary.com). Email service is [Twilio Sendgrid](https://cloudinary.com).  
 The marketplace is a Next/React app. Both are hosted on a Digital Ocean droplet.
 
-Tests are in the \__tests\__ directories, and are written with Jest and Enzyme.
+Tests are in the frontend/\__tests\__ directory, and are written with Jest and Enzyme.  Just 'npm test' to run them :)
