@@ -32,7 +32,7 @@ const Signin = () => {
     email: '',
     password: '',
   });
-  const [signin, { data, loading }] = useMutation(SIGNIN_MUTATION, {
+  const [signin, { data }] = useMutation(SIGNIN_MUTATION, {
     variables: inputs,
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });

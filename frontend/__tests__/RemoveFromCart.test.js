@@ -18,7 +18,7 @@ const mocks = [
       data: {
         me: {
           ...fakeUser(),
-          cart: [fakeCartItem({ id: 'abc123' })],
+          cart: [fakeCartItem({ id: fakeProduct.id })],
         }
       }
     }
@@ -36,11 +36,11 @@ const mocks = [
   {
     request: { 
     query: REMOVE_FROM_CART_MUTATION,
-      variables: { id: 'abc123' }
+      variables: { id: fakeProduct.id }
     },
     result: {
       data: {
-        deleteCartItem: { id: 'abc123' }
+        deleteCartItem: { id: fakeProduct.id }
       }
     }
   }, 
@@ -56,23 +56,26 @@ describe('<RemoveFromCart/>', () => {
     expect(toJSON(wrapper.find('button'))).toMatchSnapshot();
   });
   it('removes item from cart', async () => {
+    
     let apolloClient;
     const wrapper = mount(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ApolloConsumer>
         {client => {
             apolloClient = client;
-            return <RemoveFromCart id='abc123'/>;
+            return <RemoveFromCart id={fakeProduct.id}/>;
           }}
         </ApolloConsumer>
       </MockedProvider>
     );
-    const { data: { me } } = await apolloClient.query({ query: CURRENT_USER_QUERY });
-    expect(me.cart).toHaveLength(1);
-    expect(me.cart[0].product.price).toBe(1499);
-    // remove item from cart
-    wrapper.find('button').simulate('click');
-    // const { data: { me: me2 }} = await apolloClient.query({ query: CURRENT_USER_QUERY });
-    // console.log(me2);
+    await act(async () => {
+      const { data: { me } } = await apolloClient.query({ query: CURRENT_USER_QUERY });
+      expect(me.cart).toHaveLength(1);
+      expect(me.cart[0].product.price).toBe(1499);
+      // remove item from cart
+      // wrapper.find('button').simulate('click');
+      // const { data: { me: me2 }} = await apolloClient.query({ query: CURRENT_USER_QUERY });
+      // console.log(me2);
+    });
   });
 });

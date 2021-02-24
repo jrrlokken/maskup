@@ -40,12 +40,11 @@ describe('<Cart/>', () => {
         </ApolloConsumer>
       </MockedProvider>
     );
-    const user = await apolloClient.query({ query: CURRENT_USER_QUERY });
-    console.log(user);
+    
     await act(async () => {
+      const { data: { me } } = await apolloClient.query({ query: CURRENT_USER_QUERY });
       await wait();
       wrapper.update();
-      console.log(wrapper.debug())
     });
   });
 });

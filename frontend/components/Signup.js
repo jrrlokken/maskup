@@ -1,11 +1,12 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
-import Signin, { SIGNIN_MUTATION } from './Signin';
+import { SIGNIN_MUTATION } from './Signin';
 import useForm from '../lib/useForm';
 import DisplayError from './ErrorMessage';
 import Form from './styles/Form';
 import StyledButton from './styles/StyledButton';
+import { CURRENT_USER_QUERY } from './User';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -27,15 +28,19 @@ const Signup = () => {
     email: '',
     password: '',
   });
-  const [signup, { data, error, loading }]= useMutation(SIGNUP_MUTATION, {
+  const [signup, { data, error}]= useMutation(SIGNUP_MUTATION, {
     variables: inputs,
-    // refetchQueries: [{ query: CURRENT_USER_QUERY }],
+    refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+  const [signin] = useMutation(
+    SIGNIN_MUTATION,
+    { variables: inputs, refetchQueries: [{ query: CURRENT_USER_QUERY }] }
+  );
   async function handleSubmit(event) {
     event.preventDefault();
     await signup().catch(console.error);
-    resetForm();
     await signin();
+    resetForm();
   }
   return (
     <Form method='post' onSubmit={handleSubmit}>
@@ -85,3 +90,4 @@ const Signup = () => {
 }
 
 export default Signup;
+export { SIGNUP_MUTATION };
