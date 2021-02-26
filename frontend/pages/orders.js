@@ -86,3 +86,4 @@ const OrdersPage = () => {
 }
 
 export default OrdersPage;
+export { USER_ORDERS_QUERY };

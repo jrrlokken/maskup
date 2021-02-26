@@ -84,3 +84,4 @@ const Reset = ({ token }) => {
 }
 
 export default Reset;
+export { RESET_MUTATION };

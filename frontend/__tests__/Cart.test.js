@@ -24,7 +24,17 @@ const mocks = [
 ];
 
 describe('<Cart/>', () => {
-  it('renders and matches snapshot', async () => {
+  it('renders and matches snapshot', () => {
+    const wrapper=mount(
+      <MockedProvider>
+        <CartStateProvider>
+          <Cart />
+        </CartStateProvider>
+      </MockedProvider>
+    );
+    expect(toJSON(wrapper.find('Cart'))).toMatchSnapshot();
+  });
+  it('renders cart items for user', async () => {
     let apolloClient;
     const wrapper = mount(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -40,11 +50,11 @@ describe('<Cart/>', () => {
         </ApolloConsumer>
       </MockedProvider>
     );
-    
     await act(async () => {
       const { data: { me } } = await apolloClient.query({ query: CURRENT_USER_QUERY });
-      await wait();
-      wrapper.update();
+      expect(me.cart).toHaveLength(1);
+      expect(me.cart[0].id).toBe('omg123');
+      expect(me.cart[0].product.description).toBe('This is a test product');
     });
   });
 });

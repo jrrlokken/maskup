@@ -34,7 +34,6 @@ describe('<SingleProduct/>', () => {
     await act(async () => {
       await wait();
       wrapper.update();
-      console.log(wrapper.debug());
       expect(wrapper.find('Title').text()).toBe('Test Product');
       expect(wrapper.find('PriceTag').text()).toBe('$14.99');
       expect(wrapper.containsMatchingElement(<AddToCart />)).toBe(true);

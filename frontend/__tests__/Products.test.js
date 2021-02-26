@@ -9,7 +9,7 @@ import Products, { ALL_PRODUCTS_QUERY } from '../components/Products';
 import { fakeProduct } from '../lib/testUtils';
 
 configure({ adapter: new Adapter() });
-
+const perPage = 2;
 const mocks = [
   {
     request: {
@@ -37,11 +37,17 @@ describe('<Products/>', () => {
     const products = wrapper.find('Products');
     expect(toJSON(products)).toMatchSnapshot();
     expect(products.text()).toBe('Loading...');
-    
+  });
+  it('renders all products', async () => {
+    const wrapper = mount(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Products />
+      </MockedProvider>
+    );
     await act(async () => {
       await wait();
       wrapper.update();
       console.log(wrapper.debug());
     });
-  });
+  })  
 });

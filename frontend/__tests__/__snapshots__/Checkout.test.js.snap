@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkout/> renders and matches snapshot 1`] = `
+<button
+  className="StyledButton-sc-1vgaxf4-0 kkhzEF"
+  style={
+    Object {
+      "fontWeight": 900,
+    }
+  }
+>
+  Checkout
+</button>
+`;
