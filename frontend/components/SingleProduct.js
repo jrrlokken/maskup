@@ -34,6 +34,7 @@ const SINGLE_ITEM_QUERY = gql`
       description
       price
       photo {
+        id
         altText
         image {
           publicUrlTransformed
