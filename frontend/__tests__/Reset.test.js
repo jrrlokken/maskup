@@ -6,7 +6,7 @@ import wait from 'waait';
 import { MockedProvider } from '@apollo/client/testing';
 
 import Reset, { RESET_MUTATION } from '../components/Reset';
-import { fakeProduct } from '../lib/testUtils';
+import { type } from '../lib/testUtils';
 
 configure({ adapter: new Adapter() });
 
@@ -17,18 +17,20 @@ const mocks = [
     request: { 
       query: RESET_MUTATION,
       variables: {
-        redeemUserPasswordResetToken: {
-          token,
-          email: 'joshualokken@pm.me',
-          password: 'password'
-        }
+        token,
+        email: 'joshualokken@pm.me',
+        password: 'password'
       }
     },
     result: {
-      code: undefined,
-      message: 'Message'
+      data: {
+        redeemUserPasswordResetToken: {
+          code: undefined,
+          message: 'Message'
+        }
+      }
     }
-  }
+  },   
 ];
 
 describe('<Reset/>', () => {
@@ -43,17 +45,4 @@ describe('<Reset/>', () => {
     expect(form.find('h2').text()).toBe('Reset your password');
     expect(form.find('button').text()).toBe('Reset');
   });
-  it('calls the mutation', async () => {
-    const wrapper = mount(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Reset />
-      </MockedProvider>
-    );
-    wrapper.find('button').simulate('click');
-    await act(async () => {
-      await wait();
-      wrapper.update();
-    });
-    console.log(wrapper.debug());
-  })
 });

@@ -53,29 +53,4 @@ describe('<Signin/>', () => {
     expect(wrapper.find('h2').text()).toBe('Sign into your account');
     expect(toJSON(wrapper.find('form'))).toMatchSnapshot();
   });
-  it('calls the mutation properly', async () => {
-    let apolloClient;
-    const wrapper = mount(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <ApolloConsumer>
-          {client => {
-            apolloClient = client;
-            return <Signin />;
-          }}
-        </ApolloConsumer>
-      </MockedProvider>
-    );
-    await act(async () => {
-      await wait();
-      wrapper.update();
-      type(wrapper, 'email', me.email);
-      type(wrapper, 'password', 'password');
-      wrapper.update();
-      wrapper.find('form').simulate('submit');
-      await wait();
-      // const user = await apolloClient.query({ query: CURRENT_USER_QUERY });
-      // console.log(user);
-      // expect(user.data.me).toMatchObject(me);
-    });
-  });
 });

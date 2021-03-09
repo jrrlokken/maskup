@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleOrderPage/> renders and matches snapshot 1`] = `
+<SingleOrderPage
+  query={
+    Object {
+      "charge": "ch_123",
+      "createdAt": "2022-12-11T20:16:13.797Z",
+      "id": "ord123",
+      "items": Array [
+        Object {
+          "description": "expedita est doloremque explicabo eaque necessitatibus sit",
+          "id": "b4505a74-1f67-4ee1-9558-e56760116bcd",
+          "name": "nihil quam nulla est unde sit ex",
+          "photo": Object {
+            "image": Object {
+              "publicUrlTransformed": "dolorem.jpg",
+            },
+          },
+          "price": 4234,
+          "quantity": 1,
+        },
+        Object {
+          "description": "quis quae iusto sapiente nostrum aut corrupti",
+          "id": "4cef4042-dadc-4ad4-a066-08d01ced82d4",
+          "name": "voluptas culpa et vero repellat eveniet assumenda",
+          "photo": Object {
+            "image": Object {
+              "publicUrlTransformed": "et.jpg",
+            },
+          },
+          "price": 4234,
+          "quantity": 1,
+        },
+      ],
+      "total": 40000,
+      "user": Object {
+        "cart": Array [],
+        "email": "Swift_Monroe@Delbert.biz",
+        "id": "4234",
+        "name": "Mrs. Anais Koch",
+        "orders": Array [],
+        "permissions": Array [
+          "ADMIN",
+        ],
+      },
+    }
+  }
+>
+  <p>
+    Loading...
+  </p>
+</SingleOrderPage>
+`;

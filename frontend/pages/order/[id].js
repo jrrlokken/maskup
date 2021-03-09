@@ -38,8 +38,6 @@ const SingleOrderPage = ({ query }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <DisplayError error={error} />;
   const { order } = data;
-  console.log(order.items);
-
   return (
     <OrderStyles>
       <Head>
@@ -76,3 +74,4 @@ const SingleOrderPage = ({ query }) => {
 }
 
 export default SingleOrderPage;
+export { SINGLE_ORDER_QUERY };
