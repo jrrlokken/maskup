@@ -10,6 +10,7 @@ The payment API is Stripe, and is in test mode.  There are lots of test cards fo
 - API: https://api.maskup.joshualokken.tech
 - GraphQL Playground: https://api.maskup.joshualokken.tech/api/graphql
   - [Backend README](https://github.com/jrrlokken/maskup/blob/master/backend/README.md)
+- Deployment Guide: https://economic-authority-7af.notion.site/Mask-Up-Deployment-guide-5524cdc3b0b14db689843e3401f75e5f
 
 The backend is a [Keystone.js](https://www.keystonejs.com/) headless CMS and GraphQL API, and data is hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).  
 Images are hosted on [Cloudinary](https://cloudinary.com). Email service is [Twilio Sendgrid](https://cloudinary.com).  
