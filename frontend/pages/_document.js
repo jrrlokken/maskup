@@ -14,7 +14,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en-US'>
-        <Head>{this.props.styleTags}</Head>
+        <Head>{this.props.styleTags}
+        <link rel="icon" type="image/png" href="favicon.ico" />
+        </Head>
         <body>
           <Main />
           <NextScript />
